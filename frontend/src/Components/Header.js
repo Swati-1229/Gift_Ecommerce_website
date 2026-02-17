@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import "./Header.css"
-import { Link } from 'react-router-dom';
+import "./Header.scss"
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
     // const [showPopup, setShowPopup] = useState(false);
@@ -9,21 +9,26 @@ function Header() {
     const [quantity, setQuantity] = useState(0);
     const [loggedInUser, setLoggedInUser] = useState(null);
     const [showaccountmodalbox, setShowAccountModalBox] = useState(false)
+    const [showsidemenu, setShowSideMenu] = useState(false)
+    const location = useLocation();
+    const toggleSidebar = () => {
+        setShowSideMenu(!showsidemenu);
+    }
     const toggleBox = () => {
         setShowAccountModalBox(prev => !prev);
     }
 
 
     useEffect(() => {
-        const storeduserdata = JSON.parse(localStorage.getItem("loginUser")) || []
+        const storeduserdata = JSON.parse(localStorage.getItem("loginUser"))
         if (storeduserdata) {
-            setLoggedInUser(storeduserdata)
+            setLoggedInUser(storeduserdata || null)
             console.log("logged", storeduserdata)
 
         }
 
 
-    }, [])
+    }, [location])
 
     useEffect(() => {
         const updateQuantity = () => {
@@ -31,6 +36,11 @@ function Header() {
             setQuantity(cartQuantity);
         };
         updateQuantity();
+        window.addEventListener("cartUpdated", updateQuantity);
+
+        return () => {
+            window.removeEventListener("cartUpdated", updateQuantity); // Cleanup
+        };
     }, []);
 
     useEffect(() => {
@@ -66,14 +76,35 @@ function Header() {
                     <div className='col-1image'>
                         <img src='/images/th.jpg' alt='logo' className='logo' />
                     </div>
-                    <div className='hide'>
+                    <div className='hide' onClick={toggleSidebar}>
+                        <i className={showsidemenu ? "fas fa-times" : "fas fa-bars"}>
 
+                        </i>
+                        <div className={`sidebar-box ${showsidemenu ? 'open' : ''}`} >
+                            <ul >
+                                <li>Express</li>
+                                <li>Cakes</li>
+                                <li>Flowers</li>
+                                <li>Plants</li>
+                                <li>Gifts</li>
+                                <li>Personilised Gift</li>
+                                <li>Anniversiry</li>
+                                <li>Occassion</li>
+                                <span><Link to="/SignupPAge" style={{ color: "#ff1493", textDecoration: "none" }}>SignIn</Link>/<Link to="/LoginPage" style={{ color: "#ff1493", textDecoration: "none" }}>Login</Link></span>
+
+
+
+                            </ul>
+
+                        </div>
                     </div>
+
+
                     <div className='col-1serchbar'>
                         <form className='search-form'>
                             <input
                                 type='text'
-                                className='search-input'
+                                className='search-input' placeholder='search Here'
                             />
                             <button type='submit' className='search-button'>
                                 🔍
@@ -145,8 +176,10 @@ function Header() {
 
                                         {loggedInUser && (
                                             <p onClick={() => {
-                                                localStorage.removeItem("loginUSer")
+                                                localStorage.removeItem("loginUser")
                                                 setLoggedInUser(null)
+                                                setShowAccountModalBox(false);
+
                                             }}>Logout</p>
                                         )}
                                     </div>

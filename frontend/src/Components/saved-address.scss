@@ -1,0 +1,179 @@
+.AddressSection-main {
+    min-height: 500px;
+    padding: 45px 20px 0;
+
+    .SavedAddress {
+        margin-top: 8px;
+        padding: 10px 6px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 2px 4px #0000001A;
+        width: 100%;
+        // float: left;
+
+        .iconLeft {
+            // float: left;
+            // margin-left: 3%;
+            margin-top: 0%;
+
+            .iconImg {
+                height: 18px;
+            }
+        }
+
+        .myAccount {
+            margin-left: 7%;
+            font-size: 18px;
+            font-weight: 600;
+            color: #DE0C60;
+            // float: left;
+        }
+
+        .iconRight {
+            float: right;
+            margin-right: 5%;
+            margin-top: 0.7%;
+
+            img {
+                height: 10px;
+            }
+        }
+    }
+
+    .Address-Details {
+        border: 1px solid #d5d0d0;
+        margin: 20px 0px;
+        background: #FBFBFB;
+    }
+}
+
+.Address-Details-section {
+    box-shadow: 2px 1px 2px lightgray
+}
+
+.address-card {
+    background: #ffffff;
+    border: 1px solid #d5d0d0;
+    margin-top: 16px;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.address-tag {
+    text-align: left;
+
+    span {
+        background-color: #E8E8E8;
+        padding: 5px 12px;
+        font-weight: 600;
+        border-radius: 3px;
+        text-transform: capitalize;
+        font-size: 12px;
+    }
+}
+
+.address-content {
+    text-align: left;
+
+    .user-name {
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+}
+
+.address-content .user-phone,
+.user-address {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.remove-section {
+    margin-top: 8px;
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4) !important;
+    z-index: 1002;
+}
+
+.sidebar-modal {
+    position: fixed;
+    top: 10%;
+    left: 4%;
+    width: 92%;
+    max-height: 70%;
+    background-color: #fafafa;
+    border-radius: 8px;
+    z-index: 1003;
+    overflow-y: auto;
+    animation: scaleUp 0.2s ease-out;
+
+    .close-btn {
+        float: right;
+        margin-right: 5%;
+        font-size: 36px;
+    }
+}
+
+.sidebar-content {
+    background-color: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-menu {
+    list-style: none;
+
+}
+
+.sidebar-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.sidebar-menu li {
+    i {
+        width: 15%;
+    }
+
+    .common-title {
+        margin-left: 6%;
+        font-size: 15px;
+        font-weight: 600;
+        // color: #333333;
+        width: 65%;
+        text-align: left;
+    }
+
+    .iconRight {
+        width: 20%;
+    }
+
+
+
+    .iconRight img {
+        height: 10px;
+    }
+}
+
+.sidebar-menu li.active {
+    color: #de0c60;
+    font-weight: 600;
+}

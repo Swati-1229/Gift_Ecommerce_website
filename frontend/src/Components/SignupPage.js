@@ -67,17 +67,17 @@ function SignupPage() {
                         </div>
                         <div>
                             <label>Password</label>
-                            <div style={{ position: "relative;" }}>
+                            <div style={{ position: "relative" }}>
                                 <input type="password" placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                                <span className="icon-container"><i className="fa-solid fa-eye-slash"></i></span>
+                                <span className="icon-container"><i className="fas fa-eye-slash"></i></span>
                             </div>
 
                         </div>
                         <div>
                             <label>Confirm Password</label>
-                            <div style={{ position: "relative;" }}>
+                            <div style={{ position: "relative" }}>
                                 <input type="password" placeholder="Confirm Password" value={confirmpassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-                                <span className="icon-container"><i className="fa fa-lock"></i></span>
+                                <span className="icon-container"><i className="fas fa-lock"></i></span>
 
 
                             </div>

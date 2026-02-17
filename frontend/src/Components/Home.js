@@ -4,6 +4,9 @@ import "./Home.css";
 import { Trending_Gifts, itemsf, Gift_Categories, International_City_Names } from "./Data";
 import Footer from './Footer';
 import Header from './Header';
+import Mobile_Navbar_bottom from './Mobile_Navbar_bottom';
+import { Link } from 'react-router-dom';
+import BestSeller from './BestSellers';
 
 
 function Home() {
@@ -107,10 +110,11 @@ function Home() {
     // const totalItems = items.length;
     const currentItems = activetab === 'cakes' ? items : itemsf;
     const totalItems = currentItems.length;
-    const visibleItems = currentItems.slice(bestSellersStartIndex, bestSellersStartIndex + visibleCount);
+    const isMobile = window.innerWidth <= 768;
+    const visibleItems = isMobile ? currentItems : currentItems.slice(bestSellersStartIndex, bestSellersStartIndex + visibleCount);
     // console.log("abc", visibleItems)
     const Trending_Items = Trending_Gifts;
-    const trending_visible_Items = Trending_Items.slice(trendingStartIndex, trendingStartIndex + visibleCount);
+    const trending_visible_Items = isMobile ? Trending_Items : Trending_Items.slice(trendingStartIndex, trendingStartIndex + visibleCount);
 
 
     const handleBestSellersNext = () => {
@@ -145,8 +149,8 @@ function Home() {
     return (
         <div>
             <Header></Header>
-            <div>
-                <div className="slider">
+            <div className='main'>
+                {/* <div className="slider">
                     <button className="left-arrow" onClick={prevSlide}>
                         &#10094;
                     </button>
@@ -161,9 +165,46 @@ function Home() {
                             {index === current && <img src={img} alt={`slide ${index}`} className="image" />}
                         </div>
                     ))}
+                </div> */}
+                <div></div>
+                <div id="homeCarousel" className="carousel slide" data-bs-ride="carousel">
+                    {/* Dots - Only show on mobile */}
+                    <div className="carousel-indicators d-md-none">
+                        {images.map((img, index) => (
+                            <button
+                                key={index}
+                                type="button"
+                                data-bs-target="#homeCarousel"
+                                data-bs-slide-to={index}
+                                className={index === current ? 'active' : ''}
+                                aria-current={index === 0 ? 'true' : undefined}
+                                aria-label={`Slide ${index + 1}`}
+                            ></button>
+                        ))}
+                    </div>
+
+                    {/* Slides */}
+                    <div className="carousel-inner">
+                        {images.map((img, index) => (
+                            <div className={`carousel-item ${index === current ? 'active' : ''}`} key={index}>
+                                <img src={img} className="d-block w-100" alt={`slide-${index}`} />
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Arrows - Only show on desktop */}
+                    <button className="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev" >
+                        <span className="carousel-control-prev-icon" aria-hidden="true" style={{ backgroundColor: "black" }}></span>
+                        <span className="visually-hidden" >Previous</span>
+                    </button>
+                    <button className="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true" style={{ backgroundColor: "black" }}></span>
+                        <span className="visually-hidden" >Next</span>
+                    </button>
                 </div>
+
                 <div className=''>
-                    <div className='rows s1'>
+                    <div className='s1'>
                         <div className='ss1'>
                             <div>
                                 <img src='/images/homepage-icon-desktop.avif' alt='mother-collection' className='image-radius'></img>
@@ -269,7 +310,7 @@ function Home() {
                         </div>
                     </a>
                 </div>
-                <div className='cake-container'>
+                <div className='cake-container Dreamy-cakes'>
                     {items.map((item, index) => (
                         <div className="grid-items" key={index}>
                             <div className='cake-image-wrapper'>
@@ -278,7 +319,7 @@ function Home() {
                             <h3>{item.title}</h3>
                         </div>))}
                 </div>
-                <div className='fc-section'>
+                {/* <div className='fc-section'>
                     <div className='row1'>
                         <h1 className='bestseller'>BestSellers</h1>
                         <div className="tab-container">
@@ -305,8 +346,11 @@ function Home() {
                             <div className='cake-container'>
                                 {visibleItems.map((item, index) => (
                                     <div className="grid-items" key={index}>
+
                                         <div className='cake-image-wrapper'>
-                                            <img src={item.image} alt={item.title} />
+                                            <Link to={`/product/${item.id}`}>
+                                                <img src={item.image} alt={item.title} />
+                                            </Link>
                                         </div>
                                         <h3>{item.title}</h3>
                                         <p>{item.description}</p>
@@ -341,7 +385,8 @@ function Home() {
 
                         )}
                     </div>
-                </div>
+                </div> */}
+                <BestSeller />
                 <div className='Trending_Gifts_Container'>
                     <div className='TG_titlesection'>
                         <div className='TGtitle' >
@@ -457,8 +502,11 @@ function Home() {
                 <div className='service_Experience_Banner'>
                     <img src='/images/International_City_Names_Image/service-and-experience-banner-desktop-images.avif'></img>
                 </div>
+                <Footer></Footer>
+
             </div>
-            <Footer></Footer>
+            <Mobile_Navbar_bottom></Mobile_Navbar_bottom>
+
         </div>
     )
 }

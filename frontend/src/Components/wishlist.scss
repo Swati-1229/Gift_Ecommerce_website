@@ -1,6 +1,15 @@
 .cake_collection {
+
     // display: flex;
     // flex-wrap: nowrap;
+    .empty-wishlist {
+        grid-column: 1/span 4;
+
+        img {
+            width: 50%;
+            height: 80%;
+        }
+    }
 
     .product-card {
         border: 2px solid #E0E0E0;

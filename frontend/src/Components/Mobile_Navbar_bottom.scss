@@ -1,0 +1,54 @@
+.Mobile_Navbar_bottom {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .Mobile_Navbar_bottom {
+        background-color: #FFFDE7;
+        display: flex;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        bottom: 0px;
+        height: 55px;
+        border-top: 1px solid #dddddd;
+        align-items: center;
+
+        a {
+            float: left;
+            display: block;
+            color: #666666;
+            text-align: center;
+            padding: 10px 10px 0 10px;
+            text-decoration: none;
+            font-size: 17px;
+            width: 33%
+        }
+
+        .Home-image img,
+        .Category-image img,
+        .Profile-image img {
+            width: 18px;
+            height: 17px;
+        }
+
+        .Home,
+        .Category-title,
+        .Profile {
+            font-size: 12px;
+            position: relative;
+            top: -7px;
+        }
+
+
+    }
+
+}
+
+.profile-link.active .Profile {
+    color: #FD7685;
+}
+
+.profile-link.active .Home {
+    color: #FD7685;
+}

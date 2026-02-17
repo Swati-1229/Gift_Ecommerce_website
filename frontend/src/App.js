@@ -12,6 +12,8 @@ import CheckOutPage from './Components/CheckOutPage';
 // import Wishlist from './Components/Wislist';
 import LoginPage from './Components/Login_Page';
 import SignupPage from './Components/SignupPage';
+import Profile from './Components/Profile';
+import Savedaddress from './Components/saved-address';
 
 function App() {
 
@@ -47,6 +49,9 @@ function App() {
           <Route path="/CheckOutPage" element={<CheckOutPage></CheckOutPage>}></Route>
           <Route path="/LoginPage" element={<LoginPage></LoginPage>}></Route>
           <Route path="/SignupPage" element={<SignupPage></SignupPage>}></Route>
+          <Route path='/Profile' element={<Profile></Profile>}></Route>
+          <Route path='/SavedAddress' element={<Savedaddress></Savedaddress>}></Route>
+
 
         </Routes>
       </BrowserRouter>

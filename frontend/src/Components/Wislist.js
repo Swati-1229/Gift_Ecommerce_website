@@ -51,7 +51,9 @@ export default function Wishlist() {
                 <div className='cake_collection'>
 
                     {wishlistedproduct.length === 0 ? (
-                        <p>No products in wishlist.</p>
+                        <div className='empty-wishlist'>
+                            <img src='https://assets.winni.in/groot/2024/03/15/desktop/empty-wish-list/your-wish-list-img.png'></img>
+                        </div>
                     ) : (
                         wishlistedproduct.map((product) => (
                             <div className='cake_card product-card' key={product.id} style={{ marginBottom: '1rem' }}>

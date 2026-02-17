@@ -1,23 +1,19 @@
-.main {
+/* .main {
     max-width: 1450px;
-}
+} */
 
 .product-description-container {
     margin-top: 30px;
 }
 
 .product-details-container {
-    /* padding: 20px; */
     font-family: Arial, sans-serif;
     cursor: pointer;
-    /* min-width: 1300px; */
 }
 
 .main {
     margin: 20px auto;
-    /* padding: 20px; */
     padding: 20px 147px;
-    /* text-align: left; */
 }
 
 .breadcrumb {
@@ -29,14 +25,11 @@
 
 .product-content {
     display: flex;
-    /* height: calc(100vh - 60px); */
-    /* full viewport minus breadcrumb/header */
     gap: 20px;
 }
 
 .left-section {
     display: flex;
-    /* flex-direction: column; */
     gap: 10px;
 }
 
@@ -267,21 +260,18 @@ input[type="checkbox"] {
 }
 
 .add-to-cart-section {
-    /* margin-bottom: 10px;
-    margin-top: 1px; */
-    /* margin-left: 14px;
-    width: 40%; */
-    /* margin-left: 2px;
-    width: 21%; */
     margin-left: 18px;
 }
 
-.add-to-cart {
+.go-to-cart {
+    background: rgb(196, 154, 71) !important;
+}
+
+.add-to-cart,
+.go-to-cart {
     background: #00AE2E;
-    /* width: 87%; */
     font-size: 15px;
     height: 55px;
-    /* line-height: 45px; */
     color: #FFF;
     border-radius: 5px;
     font-weight: 500;
@@ -756,9 +746,9 @@ input[type="checkbox"] {
     }
 } */
 @media(max-width:768px) {
-    .main {
+    /* .main {
         padding: 15px;
-    }
+    } */
 
     .left-section {
         width: 100%;
@@ -868,13 +858,30 @@ input[type="checkbox"] {
         margin-left: 83px; */
     }
 
-    .add-to-cart-section .add-to-cart {
+    .add-to-cart-section .add-to-cart,
+    .add-to-cart-section .go-to-cart {
         width: 100%;
         /* width: 95% !important; */
         height: 46px;
         /* line-height: 49px;
         margin-top: -3px; */
         font-size: 13px
+    }
+
+    .go-to-cart {
+        background: rgb(196, 154, 71);
+        /* width: 87%; */
+        font-size: 15px;
+        height: 55px;
+        /* line-height: 45px; */
+        color: #FFF;
+        border-radius: 5px;
+        font-weight: 500;
+        border: none;
+        padding: 18px 79px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
     }
 
     .message-input {

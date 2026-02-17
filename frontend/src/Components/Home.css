@@ -42,20 +42,8 @@
     color: #333;
 }
 
-.logo {
-    height: 50px;
-    /* Adjust as needed */
-    width: auto;
-    /* Maintains aspect ratio */
-    object-fit: contain;
-    display: block;
-
-}
 
 .row {
-    /* display: flex;
-    align-items: center;
-    flex-wrap: wrap; */
     padding: 20px;
     display: grid !important;
     align-items: center;
@@ -66,141 +54,7 @@
     padding-left: 30px;
 }
 
-.search-form {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    background-color: #f3f3f3;
-    border-radius: 25px;
-    padding: 0 15px;
-    height: 50px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-}
 
-.search-input {
-    flex: 1;
-    border: none;
-    padding: 10px 15px;
-    outline: none;
-    background: transparent;
-    font-size: 14px;
-}
-
-.search-button {
-    border: none;
-    background-color: transparent;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.hide {
-    display: none;
-}
-
-.col-16 {
-    flex: 0 0 35%;
-    display: flex;
-    /* flex-direction: column; */
-    align-items: flex-end;
-    justify-content: space-between;
-    height: 100%;
-    gap: 10px;
-    padding-top: 8px;
-}
-
-.location-section {
-    display: flex;
-    padding-left: 52px;
-}
-
-/* Location Section */
-.top-right {
-    width: 100%;
-    display: flex;
-    /* justify-content: flex-end; */
-    background: transparent linear-gradient(115deg, #FFE3ED 0%, #D9F0FF 100%) 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 6px #00000029;
-    margin-top: 0px;
-    /* padding-left: 5px; */
-    justify-content: center;
-    padding: 10px;
-}
-
-.citysearch {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 5px;
-    gap: 5px;
-}
-
-.location {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.flag {
-    height: 18px;
-    width: 28px;
-}
-
-.location-select-section {
-    border-left: 2px solid #dcdcdc;
-    margin-left: 16px;
-}
-
-.location-section-section {
-    justify-content: center;
-    display: inline-flex;
-    height: 16px;
-    width: 100%;
-    margin-left: 0px;
-}
-
-.location-texts {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 11px;
-    line-height: 1.2;
-}
-
-.country-code {
-    font-weight: bold;
-    font-size: 12px;
-    color: #333;
-}
-
-.choose-location {
-    color: black;
-    font-size: 17px;
-}
-
-.edit {
-    font-size: 14px;
-    cursor: pointer;
-    color: #aaa;
-}
-
-
-.icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 12px;
-    color: #333;
-    cursor: pointer;
-}
-
-.icon img {
-    height: 26px;
-    width: 26px;
-    margin-bottom: 4px;
-}
 
 .part3 {
     margin-top: 20px;
@@ -218,7 +72,7 @@
 }
 
 .slide {
-    display: none;
+    /* display: none; */
 }
 
 .slide.active {
@@ -255,10 +109,10 @@
 }
 
 .s1 {
-    display: flex;
-    /* width: 100%; */
-    /* max-width: 1000px; */
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 20px;
     padding: 45px 153px 40px;
 }
@@ -419,7 +273,8 @@
 
 .grid-items img {
     width: 100%;
-    height: 280px;
+    /* height: 280px; */
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 12px;
@@ -433,8 +288,9 @@
 
 .grid-items p {
     font-size: 14px;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     color: #777;
+    margin: 0px;
 }
 
 .fc-section {
@@ -591,7 +447,7 @@
 
 .TrendingG-Card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
     justify-content: center;
     max-width: 1297px;
@@ -631,7 +487,8 @@
     padding: 30px 110px;
     margin: 40px 135px;
     border-radius: 20px;
-    max-width: 1400px;
+
+    /* max-width: 1400px; */
     /* flex-wrap: wrap; */
     gap: 30px;
     /* padding-right: 0px; */
@@ -707,6 +564,10 @@
     gap: 20px;
     max-width: 1500px;
 } */
+.mobile-navbar-bottom {
+    background-color: white;
+    position: absolute;
+}
 
 .GC {
     font-size: 33px;
@@ -724,7 +585,8 @@
 
 .gift_categories_section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); */
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     padding: 0 20px;
     /* justify-content: center; */
@@ -747,7 +609,8 @@
 
 .gift_categories_section .grid-items img {
     width: 100%;
-    height: 295px;
+    /* height: 295px; */
+    height: auto;
     object-fit: cover;
     border-radius: 20px 20px 0 0;
 }
@@ -789,7 +652,7 @@
 
 .ICN {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: 1600px;
     margin: 0 auto;
     padding: 27px 0px;
@@ -821,4 +684,255 @@
     display: block;
     height: auto;
     /* max-width: 100%; */
+}
+
+
+@media (max-width:768px) {
+
+    .row,
+    .s1,
+    .cake-container,
+    .Trending_Gifts_Container,
+    .fc-section,
+    .gift-respect-to-gender,
+    .More-info-about-deliveryrelated,
+    .gift_Categories,
+    .TG_titlesection,
+    .advertisement,
+    .service_Experience_Banner {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .Cakes {
+        font-size: 28px;
+        text-align: left;
+        color: blue;
+    }
+
+    .col-14 {
+        padding: 10px 0px;
+    }
+
+    .dcfeo {
+        font-size: 15px;
+        padding-left: 0px;
+        text-align: left;
+    }
+
+    .view-all {
+        padding: 2px !important;
+        font-size: 10px;
+    }
+
+    .s1 {
+        padding: 0px;
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .wrapped-f1 {
+        font-size: 10px;
+    }
+
+    .fc-section {
+        padding: 14px;
+        margin: 0px;
+    }
+
+    .Trending_Gifts_Container {
+        padding: 0px;
+        margin: 0px;
+        border-radius: 0px;
+    }
+
+    .TG_titlesection {
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-left: 5px
+    }
+
+    .TGtitle {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0px;
+        text-align: left;
+    }
+
+    .best-seller-carousel {
+
+        display: flex;
+        align-items: stretch;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+        justify-content: flex-start;
+    }
+
+    .TrendingG-Card {
+        gap: 10px;
+    }
+
+    .row1 {
+        margin-bottom: 7px;
+    }
+
+    .bestseller {
+        text-align: left;
+        font-size: 29px;
+        flex: 0 0 100%;
+    }
+
+    .grid-items img {
+        height: 205px;
+        margin-bottom: 0px;
+    }
+
+    .cake-image-wrapper p {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .tab-container {
+        width: 50%;
+        flex: 0 0 50%;
+    }
+
+
+
+    .gift-respect-to-gender {
+        padding: 0px;
+        margin: 10px 0px;
+    }
+
+    .More-info-about-deliveryrelated {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(129px, 1fr));
+        padding: 10px;
+        margin: 0px;
+    }
+
+
+    .PTSSI {
+        width: 100%
+    }
+
+
+    .slotsltimg-left {
+        width: 39%
+    }
+
+    .PSLHeading {
+        font-size: 11px;
+        line-height: 80%;
+    }
+
+    .PSLHeading span {
+        font-size: 11px;
+    }
+
+    .cake-container {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px;
+        padding: 15px;
+        justify-content: left;
+
+    }
+
+    .Dreamy-cakes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Dreamy-cakes .grid-items {
+        width: 100% !important;
+    }
+
+    .Dreamy-cakes .grid-items img {
+        height: auto;
+    }
+
+    .cake-container .grid-items {
+        flex: 0 0 auto;
+        width: 220px;
+        /* or whatever you prefer for each card */
+    }
+
+    .flower-container {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px;
+        padding: 15px;
+        justify-content: left;
+    }
+
+    .flower-container .grid-items {
+        flex: 0 0 auto;
+        width: 220px;
+    }
+
+    .TrendingG-Card {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px;
+        padding: 15px;
+        justify-content: left;
+    }
+
+    .TrendingG-Card .grid-items {
+        flex: 0 0 auto;
+        width: 220px;
+    }
+
+    .left-arrows,
+    .right-arrows {
+        display: none;
+    }
+
+    .gift_categories_section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    /* .gift_categories_section .grid-items {
+        padding-bottom: 30px;
+    } */
+
+    /* .gift_categories_section .grid-items img {
+        height: 100%;
+    } */
+
+    .gift_categories_section .grid-items h3 {
+        font-size: 12px;
+        height: 2px;
+    }
+
+    .ICN {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+    }
+
+    .ICN img {
+        height: auto;
+    }
+
+    .gridICN h3 {
+        font-size: 12px;
+    }
+
+
 }

@@ -1131,7 +1131,90 @@ export const cake_collections = [
     }
 ]
 
+export const items = [
+    {
+        id: "120",
+        image: "/images/cake1.avif",
+        title: "Photo Cakes",
+        description: "For special occasions",
+        rating: "4.5",
+        ActualPrice: "999",
+        DPrice: "599",
+    },
+    {
+        id: "121",
 
+        image: "/images/cake2.avif",
+        title: "Roses",
+        description: "Love in every petal",
+        rating: "5",
+        ActualPrice: "999",
+        DPrice: "599",
+    },
+    {
+        id: "122",
+
+        title: "Best Seller Plants",
+        description: "Experience Pure Serenity",
+        image: "/images/cake3.avif",
+        ActualPrice: "999",
+        DPrice: "599",
+        rating: "3.9",
+
+    },
+    {
+        id: "123",
+
+        title: "Water Bottles",
+        description: "Your Daily Dose of Hydration",
+        image: "/images/kid-cake.avif",
+        ActualPrice: "999",
+        DPrice: "599",
+        rating: "5",
+    },
+    {
+        id: "124",
+
+        title: "Best Seller Plants",
+        description: "Experience Pure Serenity",
+        image: "/images/cake5.webp",
+        ActualPrice: "999",
+        DPrice: "599",
+        rating: "3.9",
+    },
+    {
+        id: "125",
+
+        title: "Best Seller Plants",
+        description: "Experience Pure Serenity",
+        image: "/images/cake6.webp",
+        ActualPrice: "999",
+        DPrice: "599",
+        rating: "3.9",
+    },
+    {
+        id: "126",
+
+        title: "Best Seller Plants",
+        description: "Experience Pure Serenity",
+        image: "/images/cake7.jpeg",
+        ActualPrice: "999",
+        DPrice: "599",
+        rating: "3.9",
+    },
+    {
+        id: "127",
+
+        title: "Best Seller Plants",
+        description: "Experience Pure Serenity",
+        image: "/images/cake8.avif",
+        ActualPrice: "999",
+        DPrice: "599",
+        rating: "3.9",
+    },
+
+
+];
 export const country = [
     {
         name: "Australia",

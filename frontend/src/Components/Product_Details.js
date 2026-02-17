@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './ProductDetails.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import { cake_collections } from './Data';
+import { cake_collections, items } from './Data';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 
@@ -49,7 +49,7 @@ export default function Product_Details() {
         const savedwishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         setwishlisted(savedwishlist);
     }, []);
-    const product = cake_collections.find(p => p.id === id);
+    const product = cake_collections.find(p => p.id === id) || items.find(p => p.id === id);
     useEffect(() => {
         if (product?.image) {
             setMainImage(product.image)
@@ -75,9 +75,13 @@ export default function Product_Details() {
         const totalQantity = updatedCart.reduce((acc, item) => acc + item.quantity, 0)
         localStorage.setItem("cartQuantity", totalQantity);
         setQuantity(totalQantity)
+        window.dispatchEvent(new Event("cartUpdated"));
         console.log("cart", totalQantity, cart, (cart).length)
-        navigate('/Addtocart', { state: { cart: updatedCart } });
+        // navigate('/Addtocart', { state: { cart: updatedCart } });
     }
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const filteredItems = cart.filter(item => item.id === product.id);
+    const isInCart = filteredItems.length > 0;
 
     return (
         <div className="product-details-container">
@@ -123,7 +127,10 @@ export default function Product_Details() {
                                     Rating & 674 Reviews
                                 </span>
                             </span>
-                            <h3>₹{product.price}</h3>
+                            <div style={{ display: "flex", gap: "5px" }}>
+                                <span>₹{product.price}</span>
+                                {/* <span style={{ color: "gray" }}>₹<del>{product.price}</del></span> */}
+                            </div>
                             <div className='Serving_info'>
                                 weight: <span onClick={togglePopup}>Serving info</span>
                                 {showPopup && (
@@ -221,7 +228,11 @@ export default function Product_Details() {
                                 </div>
 
                                 <div className='add-to-cart-section'>
-                                    <button className="add-to-cart" onClick={() => onAddtoCart(product)}>ADD TO CART</button>
+                                    {isInCart ? (
+                                        <Link to="/Addtocart"><button className="go-to-cart" >GO TO CART</button></Link>
+                                    ) : (
+                                        <button className="add-to-cart" onClick={() => onAddtoCart(product)}>ADD TO CART</button>
+                                    )}
                                 </div>
 
                             </div>
